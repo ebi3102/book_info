@@ -34,7 +34,7 @@ class Create_Book_Info_Table
             post_id bigint(20) UNSIGNED NOT NULL,
             isbn varchar(200) NOT NULL,
             PRIMARY KEY (ID),
-            FOREIGN KEY (post_id) REFERENCES {$postsTable}(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+            FOREIGN KEY (post_id) REFERENCES {$postsTable}(ID) ON DELETE CASCADE ON UPDATE CASCADE
         )$charset_collate";
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
