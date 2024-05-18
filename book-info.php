@@ -11,6 +11,7 @@
  * Version:         1.0
  */
 
+use BookInfo\Book_Info;
 use Rabbit\Application;
 use Rabbit\Redirects\RedirectServiceProvider;
 use Rabbit\Database\DatabaseServiceProvider;
@@ -37,11 +38,18 @@ class ExamplePluginInit extends Singleton
     private $application;
 
     /**
+     * @var Book_Info
+     * The Instance of Plugin
+     */
+    private $instance;
+
+    /**
      * ExamplePluginInit constructor.
      */
     public function __construct()
     {
         $this->application = Application::get()->loadPlugin(__DIR__, __FILE__, 'config');
+        $this->instance = new Book_Info();
         $this->init();
     }
 
@@ -57,13 +65,13 @@ class ExamplePluginInit extends Singleton
             $this->application->addServiceProvider(TemplatesServiceProvider::class);
             $this->application->addServiceProvider(LoggerServiceProvider::class);
             // Load your own service providers here...
-
+            
 
             /**
              * Activation hooks
              */
             $this->application->onActivation(function () {
-                // Create tables or something else
+                $this->instance->onActivation();
             });
 
             /**
