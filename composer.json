@@ -18,6 +18,6 @@
         }
     },
     "require": {
-        "veronalabs/rabbit": "^1.4"
+        "veronalabs/rabbit": "^0.1.0"
     }
 }
