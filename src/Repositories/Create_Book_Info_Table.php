@@ -9,14 +9,16 @@ namespace BookInfo\Repositories;
 class Create_Book_Info_Table
 {
     private $wp_db;
+    private  string $tableName;
 
     /**
      * Constructor for the class.
      */
-    public function __construct()
+    public function __construct($tableName)
     {
         global $wpdb;
         $this->wp_db = $wpdb;
+        $this->tableName = $this->wp_db->prefix . $tableName;
         $this->create();
     }
 
@@ -25,11 +27,10 @@ class Create_Book_Info_Table
      */
     public function create()
     {
-        $tableName = $this->wp_db->prefix .'books_info';
         $postsTable = $this->wp_db->prefix . 'posts';
 
         $charset_collate = $this->wp_db->get_charset_collate();
-        $sql = "CREATE TABLE IF NOT EXISTS $tableName (
+        $sql = "CREATE TABLE IF NOT EXISTS {$this->tableName} (
             ID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
             post_id bigint(20) UNSIGNED NOT NULL,
             isbn varchar(200) NOT NULL,
