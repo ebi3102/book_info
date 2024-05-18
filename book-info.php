@@ -49,7 +49,7 @@ class ExamplePluginInit extends Singleton
     public function __construct()
     {
         $this->application = Application::get()->loadPlugin(__DIR__, __FILE__, 'config');
-        $this->instance = new Book_Info();
+        $this->instance = new Book_Info($this->application);
         $this->init();
     }
 
@@ -65,7 +65,7 @@ class ExamplePluginInit extends Singleton
             $this->application->addServiceProvider(TemplatesServiceProvider::class);
             $this->application->addServiceProvider(LoggerServiceProvider::class);
             // Load your own service providers here...
-            
+
 
             /**
              * Activation hooks
