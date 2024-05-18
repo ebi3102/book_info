@@ -6,7 +6,7 @@
  * @since   1.0.0
  */
 namespace BookInfo;
-use BookInfo\Repositories\Create_Book_Info_Table;
+use BookInfo\DB\Create_Book_Info_Table;
 use Rabbit\Plugin;
 
 final class Book_Info

@@ -1,5 +1,5 @@
 <?php
-namespace BookInfo\Repositories;
+namespace BookInfo\DB;
 /**
  * Class Create_Book_Info_Table
  *
