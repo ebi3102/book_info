@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name:     Example Plugin
+ * Plugin Name:     Books Information
  * Plugin URI:      https://www.veronalabs.com
  * Plugin Prefix:   EXAMPLE_PLUGIN
- * Description:     Example WordPress Plugin Based on Rabbit Framework!
- * Author:          VeronaLabs
- * Author URI:      https://veronalabs.com
- * Text Domain:     example-plugin
+ * Description:     An assignment for recruitment in Verona Lab
+ * Author:          Ebrahim Moeini
+ * Author URI:      https://emoeini.com
+ * Text Domain:     book_info
  * Domain Path:     /languages
  * Version:         1.0
  */

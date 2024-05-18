@@ -1,6 +1,6 @@
 {
-    "name": "veronalabs/plugin",
-    "description": "Example WordPress Plugin Based on Rabbit Framework!",
+    "name": "veronalabs/book_info",
+    "description": "An assignment for recruitment in Verona Lab",
     "keywords": [
         "wordpress",
         "plugin",
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ExamplePlugin\\": "src"
+            "BookInfo\\": "src"
         }
     },
     "require": {

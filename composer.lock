@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cda21046d5ab6f63ef7984533834ae0",
+    "content-hash": "c6ca6cd09698111fee0b67029ad893e7",
     "packages": [
         {
             "name": "caseyamcl/configula",
