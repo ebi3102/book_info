@@ -17,7 +17,13 @@
             "BookInfo\\": "src"
         }
     },
+    "repositories": [
+        {
+            "url": "https://github.com/veronalabs/rabbit.git",
+            "type": "git"
+        }
+    ],
     "require": {
-        "veronalabs/rabbit": "^0.1.0"
+        "veronalabs/rabbit": "^1.4"
     }
 }
