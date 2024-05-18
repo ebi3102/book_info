@@ -19,6 +19,6 @@ final class Book_Info
     }
     public function onActivation()
     {
-        new Create_Book_Info_Table();
+        new Create_Book_Info_Table($this->application->config('table_name'));
     }
 }
