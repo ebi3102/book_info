@@ -6,6 +6,7 @@
  * @since   1.0.0
  */
 namespace BookInfo;
+use BookInfo\CPT\Register_Book_Authors_Taxonomy;
 use BookInfo\CPT\Register_Book_Post_Type;
 use BookInfo\CPT\Register_Book_Publisher_Taxonomy;
 use BookInfo\DB\Create_Book_Info_Table;
@@ -29,5 +30,6 @@ final class Book_Info
     {
         Register_Book_Post_Type::register_post_type($this->application->config('book_post_type')->name);
         new Register_Book_Publisher_Taxonomy($this->application->config('book_post_type'));
+        new Register_Book_Authors_Taxonomy($this->application->config('book_post_type'));
     }
 }
