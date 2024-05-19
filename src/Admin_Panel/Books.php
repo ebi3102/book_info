@@ -25,7 +25,20 @@ class Books
     }
 
     public function create_page()
-    {
-        echo "Hello World";
-    }
+    { ?>
+        <div class="wrap">
+        <h2>Books Info</h2>
+        <?php
+        $booksListTable = new Books_Info_List_Table();
+        $booksListTable->prepare_items();
+        ?>
+        <pre><?php var_dump($booksListTable) ?></pre>
+        <form method="post">
+            <input type="hidden" name="page" value="books-info">
+            <?php
+            $booksListTable->display();
+            ?>
+        </form>
+    </div>
+    <?php }
 }
