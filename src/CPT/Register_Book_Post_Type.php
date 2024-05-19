@@ -28,10 +28,16 @@ class Register_Book_Post_Type
         register_post_type('book', array(
             'labels' => $labels,
             'public' => true,
+            'has_archive' => true,
             'publicly_queryable' => true,
             'show_ui' => true,
             'query_var' => true,
-            'rewrite' => $rewrite,
+            'rewrite' => array(
+				'slug' => 'book',
+				'with_front' => true,
+				'feeds' => true,
+				'pages' => true,
+			),
             'capability_type' => 'post',
             'hierarchical' => true,
             'menu_position' => 5,
