@@ -16,28 +16,17 @@ abstract class DB_Init {
         global $wpdb;
         $this->db_class = $wpdb; // Initialize the database object
         $this->table = $this->db_class->prefix . $table;
-
     }
 
     /**
-     * Execute the query and return the results.
-     *
-     * @return array|null An array of query results or null if no results are found.
-     */
-    protected function results()
-    {
-        return $this->db_class->get_results($this->db_prepare($this->query));
-    }
-
-    /**
-     * Prepare a query statement for execution.
-     *
-     * @param string $query The SQL query to prepare.
-     *
-     * @return object|false A prepared query statement object or false on failure.
-     */
-    protected function db_prepare($query)
-    {
-        return $this->db_class->prepare($query);
-    }
+         * Prepare a query statement for execution.
+         *
+         * @param string $query The SQL query to prepare.
+         *
+         * @return object|false A prepared query statement object or false on failure.
+         */
+		protected function db_prepare($query)
+		{
+			return $this->db_class->prepare($query);
+		}
 }
