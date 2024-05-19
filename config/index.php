@@ -21,6 +21,7 @@ $config = [
         'publisher_taxo_name'=> 'publisher',
         'authors_taxo_name'=> 'authors'
     ],
-    'book_menu_slug'=>'books-info'
+    'book_menu_slug'=>'books-info',
+    'book_info_per_page' => 10
 
 ];
