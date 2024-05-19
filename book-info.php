@@ -81,9 +81,12 @@ class ExamplePluginInit extends Singleton
                 // Clear events, cache or something else
             });
 
+            add_action('init', function(){
+                $this->instance->init_loading();
+            });
+
             $this->application->boot(function (Plugin $plugin) {
                 $plugin->loadPluginTextDomain();
-                $this->instance->plugin_loading();
 
                 // load template
                 $this->application->template('plugin-template.php', ['foo' => 'bar']);

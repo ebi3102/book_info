@@ -24,7 +24,7 @@ final class Book_Info
         Register_Book_Post_Type::rewrite_flush();
     }
 
-    public function plugin_loading()
+    public function init_loading()
     {
         Register_Book_Post_Type::register_post_type();
     }
