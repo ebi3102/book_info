@@ -18,7 +18,7 @@ class Register_Book_Publisher_Taxonomy
 			'labels' => array(
 				'name' => __('Publisher', 'book_info'),
 				'singular_name' => __('Publisher', 'book_info'),
-				'add_new' => __('Add New' , 'booking-category', 'book_info'),
+				'add_new' => __('Add New' , 'book_info'),
 				'add_new_item' => __('Add New Publisher', 'book_info'),
 				'search_item' => __('Search Publisher', 'book_info'),
 				'all_items' => __('All Publisher', 'book_info'),
