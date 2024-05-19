@@ -7,6 +7,7 @@
  */
 namespace BookInfo;
 use BookInfo\CPT\Register_Book_Post_Type;
+use BookInfo\CPT\Register_Book_Publisher_Taxonomy;
 use BookInfo\DB\Create_Book_Info_Table;
 use Rabbit\Plugin;
 
@@ -27,5 +28,6 @@ final class Book_Info
     public function init_loading()
     {
         Register_Book_Post_Type::register_post_type($this->application->config('book_post_type')->name);
+        new Register_Book_Publisher_Taxonomy($this->application->config('book_post_type'));
     }
 }
