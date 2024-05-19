@@ -83,6 +83,7 @@ class ExamplePluginInit extends Singleton
 
             $this->application->boot(function (Plugin $plugin) {
                 $plugin->loadPluginTextDomain();
+                $this->instance->plugin_loading();
 
                 // load template
                 $this->application->template('plugin-template.php', ['foo' => 'bar']);
