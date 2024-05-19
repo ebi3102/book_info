@@ -20,6 +20,7 @@ $config = [
         'name'=> 'book',
         'publisher_taxo_name'=> 'publisher',
         'authors_taxo_name'=> 'authors'
-    ]
+    ],
+    'book_menu_slug'=>'books-info'
 
 ];
