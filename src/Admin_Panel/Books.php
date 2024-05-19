@@ -5,9 +5,14 @@ namespace BookInfo\Admin_Panel;
 class Books
 {
     protected $menuSlug;
-    public function __construct($menuSlug)
+    private string $tableName;
+    private int $perPage;
+    public function __construct($menuSlug, $tableName, $perPage)
     {
         $this->menuSlug = $menuSlug;
+        $this->tableName = $tableName;
+        $this->perPage = $perPage;
+
         add_action( 'admin_menu', array($this, 'add_admin_page') );
     }
 
@@ -29,10 +34,9 @@ class Books
         <div class="wrap">
         <h2>Books Info</h2>
         <?php
-        $booksListTable = new Books_Info_List_Table();
+        $booksListTable = new Books_Info_List_Table( $this->tableName, $this->perPage);
         $booksListTable->prepare_items();
         ?>
-        <pre><?php var_dump($booksListTable) ?></pre>
         <form method="post">
             <input type="hidden" name="page" value="books-info">
             <?php

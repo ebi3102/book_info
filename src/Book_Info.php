@@ -38,6 +38,6 @@ final class Book_Info
     public function plugin_loading()
     {
         new Isbn_Meta_Box($this->application);
-        new Books($this->application->config('book_menu_slug'));
+        new Books($this->application->config('book_menu_slug'), $this->application->config('table_name'), $this->application->config('book_info_per_page'));
     }
 }
