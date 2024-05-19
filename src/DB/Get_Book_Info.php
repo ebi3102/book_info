@@ -25,15 +25,25 @@ class Get_Book_Info extends DB_Init
          
     }
 
-    public static function get_all(string $tableName)
+    public static function total_items(string $tableName)
     {
         $instance = new self($tableName);
-        return $instance->db_class->
-            get_results(
+        return $instance->db_class->query(
                 $instance->db_prepare(
                     "SELECT * FROM {$instance->table}"
                 )
             );
+    }
+
+    public static function get_limited_items(string $tableName, int $current_page, int $per_page)
+    {
+        $instance = new self($tableName);
+        $query = "SELECT * FROM $instance->table";
+        $query .= " LIMIT " . (($current_page - 1) * $per_page) . ", $per_page";
+        return $instance->db_class->get_results(
+            $instance->db_prepare($query),
+            ARRAY_A
+        );
     }
 
 }
