@@ -21,11 +21,11 @@ final class Book_Info
     public function onActivation()
     {
         new Create_Book_Info_Table($this->application->config('table_name'));
-        Register_Book_Post_Type::rewrite_flush();
+        Register_Book_Post_Type::rewrite_flush($this->application->config('book_post_type')->name);
     }
 
     public function init_loading()
     {
-        Register_Book_Post_Type::register_post_type();
+        Register_Book_Post_Type::register_post_type($this->application->config('book_post_type')->name);
     }
 }
