@@ -13,16 +13,27 @@ class Get_Book_Info extends DB_Init
     }
 
     /**
-     * Insert a new row into the database table.
+     * get a row from database table.
      *
      *
-     * @return int|false The ID of the inserted row or false if the row insertion fails.
+     * @return object|false The The row object or false if the row not found.
      */
     public static function get(string $tableName, string $post_id)
     {
         $instance = new self($tableName);
         return $instance->db_class->get_row($instance->db_prepare("SELECT * FROM {$instance->table} WHERE post_id = $post_id" ));
          
+    }
+
+    public static function get_all(string $tableName)
+    {
+        $instance = new self($tableName);
+        return $instance->db_class->
+            get_results(
+                $instance->db_prepare(
+                    "SELECT * FROM {$instance->table}"
+                )
+            );
     }
 
 }
