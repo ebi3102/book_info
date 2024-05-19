@@ -47,6 +47,16 @@ class Books_Info_List_Table extends \WP_List_Table {
         );
     }
 
+    /**
+     * Define which columns are hidden
+     *
+     * @return array
+     */
+    public function get_hidden_columns()
+    {
+        return array();
+    }
+
     function get_sortable_columns() {
         return [
             'ID'      => ['ID', true],
@@ -69,5 +79,11 @@ class Books_Info_List_Table extends \WP_List_Table {
         ]);
 
         $this->items = $booksInfoObj->get_limited_items($current_page, $this->per_page);
+
+        $columns = $this->get_columns();
+        $hidden = $this->get_hidden_columns();
+        $sortable = $this->get_sortable_columns();
+        $this->_column_headers = array($columns, $hidden, $sortable);
+
     }
 }
