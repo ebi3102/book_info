@@ -6,6 +6,7 @@
  * @since   1.0.0
  */
 namespace BookInfo;
+use BookInfo\Admin_Panel\Books;
 use BookInfo\CPT\Isbn_Meta_Box;
 use BookInfo\CPT\Register_Book_Authors_Taxonomy;
 use BookInfo\CPT\Register_Book_Post_Type;
@@ -37,5 +38,6 @@ final class Book_Info
     public function plugin_loading()
     {
         new Isbn_Meta_Box($this->application);
+        new Books($this->application->config('book_menu_slug'));
     }
 }
