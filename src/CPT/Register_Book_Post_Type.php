@@ -4,12 +4,12 @@ namespace BookInfo\CPT;
 
 class Register_Book_Post_Type
 {
-    public function __construct()
+    public static function rewrite_flush()
     {
-        $this->register_post_type();
+        (new self)->register_post_type(true);
+        flush_rewrite_rules();
     }
-
-    public function register_post_type()
+    public static function register_post_type(bool $rewrite=false)
     {
         $labels = array(
             'name' => __('Book', 'book_info'),
@@ -25,21 +25,19 @@ class Register_Book_Post_Type
             'parent_item_colon' => ''
           );
           
-        $args = array(
+        register_post_type('book', array(
             'labels' => $labels,
             'public' => true,
             'publicly_queryable' => true,
             'show_ui' => true,
             'query_var' => true,
-            'rewrite' => true,
+            'rewrite' => $rewrite,
             'capability_type' => 'post',
             'hierarchical' => true,
             'menu_position' => 5,
             'taxonomies' => array( 'post_tag'),
             'can_export' => true,
             'supports' => array('title','editor','thumbnail','custom-fields', 'comments', 'excerpt'),
-        );
-          
-          register_post_type('book',$args);
+        ));
     }
 }
