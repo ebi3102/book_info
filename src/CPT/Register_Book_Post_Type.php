@@ -12,7 +12,7 @@ class Register_Book_Post_Type
     public static function register_post_type(string $cptName)
     {
         $labels = array(
-            'name' => __('Book', 'book_info'),
+            'name' => __('Books', 'book_info'),
             'singular_name' => __('Book', 'book_info'),
             'add_new' => __('Add New', 'book_info'),
             'add_new_item' => __('Add New Book', 'book_info'),
@@ -41,6 +41,7 @@ class Register_Book_Post_Type
             'capability_type' => 'post',
             'hierarchical' => true,
             'menu_position' => 5,
+            'menu_icon'=>'dashicons-book-alt',
             'taxonomies' => array( 'post_tag'),
             'can_export' => true,
             'supports' => array('title','editor','thumbnail','custom-fields', 'comments', 'excerpt'),

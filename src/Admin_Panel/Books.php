@@ -24,7 +24,7 @@ class Books
             'manage_options', 
             $this->menuSlug, 
             array($this, 'create_page'), 
-            'dashicons-groups', 
+            'dashicons-book', 
             2
         );
     }
